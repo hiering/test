@@ -14,7 +14,7 @@ jobs:
         run: echo "::set-output name=status::$(curl -s "https://api.github.com/repos/hiering/test/actions/workflows/fail-status.yml/runs" | jq -r '.workflow_runs[0].status')"
   
   job2:
-    if: ${{ needs.job1.outputs.status_release == 'success' }}
+    if: ${{ needs.job1.outputs.status_release == 'completed' }}
     needs: job1
     runs-on: ubuntu-latest
     steps:
