@@ -3,9 +3,6 @@ name: Env
 on:
   workflow_dispatch:
 
-env:
-  STATUS: None
-
 jobs:
   job1:
     runs-on: ubuntu-latest
