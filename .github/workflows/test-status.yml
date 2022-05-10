@@ -12,6 +12,7 @@ jobs:
     steps:
       - name: Set env
         run: echo "STATUS=$(curl -s "https://api.github.com/repos/hiering/test/actions/workflows/fail-status.yml/runs" | jq -r '.workflow_runs[0].status')" >> $GITHUB_ENV
+      - run: echo STATUS 
   
   job2:
     needs: [job1]
