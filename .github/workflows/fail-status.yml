@@ -1,0 +1,11 @@
+name: Fail
+
+on:
+  workflow_dispatch:
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: FAIL
+        run: cd exitentdir
