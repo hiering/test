@@ -1,0 +1,22 @@
+name: Expressions run
+
+on:
+  workflow_dispatch:
+  
+ jobs:
+  job1:
+    runs-on: ubuntu-latest
+    outputs:
+      status_release: ${{ steps.check.outputs.status }}
+    steps:
+      - name: Check status workflow
+        id: check
+        run: echo "::set-output name=status::$(curl -s "https://api.github.com/repos/hiering/test/actions/workflows/fail-status.yml/runs" | jq -r '.workflow_runs[0].status')"
+  
+  job2:
+    if: ${{ needs.job1.outputs.status_release == 'success' }}
+    needs: job1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print status
+        run: echo status=${{ needs.job1.outputs.status_release }}
