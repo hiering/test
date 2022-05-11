@@ -30,9 +30,6 @@ on:
       ruby-unicorn-canary:
         type: boolean
         default: false
-      CUSTOM_TAG:
-        description: CUSTOM TAG
-        default: latest
       DEVOPS_BRANCH:
         description: DEVOPS BRANCH
         default: master
