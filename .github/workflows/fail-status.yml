@@ -3,17 +3,40 @@ name: Mixed inputs
 on:
   workflow_dispatch:
     inputs:
-      name:
-        type: choice
-        description: Who to greet
-        options: 
-        - monalisa
-        - cschleiden
-      message:
-        required: true
-      use-emoji:
+      ruby-unicorn-api-unicorn1:
         type: boolean
-        description: Include 🎉🤣 emojis
+        default: false
+      ruby-all:
+        type: boolean
+        default: false
+      ruby-unicorn-www:
+        type: boolean
+        default: false
+      ruby-unicorn-api:
+        type: boolean
+        default: false
+      ruby-rakes:
+        type: boolean
+        default: false
+      ruby-sidekiq:
+        type: boolean
+        default: false
+      ruby-daemons:
+        type: boolean
+        default: false
+      ruby-prometheus-exporter:
+        type: boolean
+        default: false
+      ruby-unicorn-canary:
+        type: boolean
+        default: false
+      CUSTOM_TAG:
+        description: CUSTOM TAG
+        default: latest
+      DEVOPS_BRANCH:
+        description: DEVOPS BRANCH
+        default: master
+      
 
 jobs:
   greet:
