@@ -3,32 +3,24 @@ name: Mixed inputs
 on:
   workflow_dispatch:
     inputs:
-      logLevel:
-        description: 'Log level'
-        required: true
-        default: 'warning' 
+      name:
         type: choice
-        options:
-        - info
-        - warning
-        - debug 
-      print_tags:
-        description: 'True to print to STDOUT'
-        required: true 
-        type: boolean 
-      tags:
-        description: 'Test scenario tags'
-        required: true 
-        type: string
+        description: Who to greet
+        options: 
+        - monalisa
+        - cschleiden
+      message:
+        required: true
+      use-emoji:
+        type: boolean
+        description: Include 🎉🤣 emojis
       environment:
-        description: 'Environment to run tests against'
         type: environment
-        required: true 
 
 jobs:
-  print-tag:
+  greet:
     runs-on: ubuntu-latest
-    if:  ${{ github.event.inputs.print_tags == 'true' }} 
+
     steps:
-      - name: Print the input tag to STDOUT
-        run: echo  The tags are ${{ github.event.inputs.tags }} 
+    - name: Send greeting
+      run: echo "${{ github.event.inputs.message }} ${{ fromJSON('["", "🥳"]')[github.event.inputs.use-emoji == 'true'] }} ${{ github.event.inputs.name }}"
