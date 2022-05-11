@@ -20,4 +20,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Send greeting
-      run: echo " toJSON('inputs')"
+      env:
+        STEPS_CONTEXT: ${{ toJson(inputs) }}
+      run: echo "$STEPS_CONTEXT"
