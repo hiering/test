@@ -20,6 +20,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Send greeting
-      env:
-        STEPS_CONTEXT: ${{ toJson(inputs) }}
-      run: echo "$STEPS_CONTEXT"
+      run: echo $GITHUB_EVENT_PATH
