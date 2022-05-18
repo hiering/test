@@ -8,16 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: First repo
-        uses: actions/checkout@v3
-        with:
-          repository: hiering/ansible-proxmox
-      - run: ls
-      
-      - uses: actions/checkout@v3
-        with:
-          repository: hiering/ansible-2048-deploy
-          path: my-tools
-      - run: ls
+        run: ls -a
         
     
   
