@@ -1,0 +1,19 @@
+name: Test comment PR
+
+on:
+  push:
+    branches:
+      - '**'
+      - '!master'
+  issue_comment:
+    types:
+    - created
+    
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' || github.event.comment.body == 'test this please' }}
+    steps:
+      - name: Test var
+        run: echo ${{ github.event.comment.body }}
+      
