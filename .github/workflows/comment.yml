@@ -15,5 +15,5 @@ jobs:
     if: ${{ github.event_name == 'push' || github.event.comment.body == 'test this please' }}
     steps:
       - name: Test var
-        run: ls -a
+        run: ls -a ..
       
