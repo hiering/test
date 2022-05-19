@@ -16,4 +16,5 @@ jobs:
     steps:
       - name: Test var
         run: env
-      
+      - name: Event
+        run: cat $GITHUB_EVENT_PATH
