@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: First repo
-        run: echo ${{github.run_number % 3 }}
+        run: echo ${{github.run_number / 3 }}
         
     
   
