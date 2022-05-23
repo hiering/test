@@ -7,7 +7,7 @@ on:
 
 jobs:
   re-run:
-    if: ${{ github.event.comment.body == 'test this please' }}
+    if: ${{ github.event.issue.pull_request && github.event.comment.body == 'test this please' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
