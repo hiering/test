@@ -19,4 +19,4 @@ jobs:
       - name: Run python
         env:
           TOKEN: ${{ secrets.PAT_APPODEAL_RUNNER }}
-        run: python3 commen.py
+        run: python3 comment.py
