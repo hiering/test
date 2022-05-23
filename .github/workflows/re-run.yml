@@ -1,16 +1,21 @@
 name: Test this pleas
 
 on:
-  push:
   issue_comment:
     types:
     - created
 
 jobs:
   re-run:
-    if: ${{ github.event.issue.pull_request && github.event.comment.body == 'test this please' }}
+    if: ${{ github.event.comment.body == 'test this please' }}
     runs-on: self-hosted
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+      - name: test
+        run: ls
+        
       - name: Run python
         env:
           TOKEN: ${{ secrets.PAT_APPODEAL_RUNNER }}
