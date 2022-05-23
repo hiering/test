@@ -20,4 +20,4 @@ runs_list = json.loads(runs_request.content)
 
 for run in runs_list['workflow_runs']:
   if run['head_sha'] == commit_sha:
-    re_run = requests.post(url=f'https://api.github.com/repos/hiering/test/actions/runs/{run['id']}/rerun', auth=(GH_USER, GH_TOKEN), headers=header)
+    re_run = requests.post(url=f'https://api.github.com/repos/hiering/test/actions/runs/{run["id"]}/rerun', auth=(GH_USER, GH_TOKEN), headers=header)
