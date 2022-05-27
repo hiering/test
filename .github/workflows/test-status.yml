@@ -7,8 +7,32 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - name: First repo
-        run: echo ${{github.run_number / 3 }}
+      - name: Install
+        run: pip install PyGithub
+      - name: Check
+        run: |
+          import os
+          import time
+          from github import Github
+
+          g = Github('${{ secrets.PAT_APPODEAL_RUNNER }}')
+          repo = g.get_repo('hiering/test')
+          workflow = repo.get_workflow('fail-status.yml')
+
+          while True:
+              last_run = workflow.get_runs()[0]
+              if last_run.status == 'completed':
+                  break
+              print('sleep')
+              time.sleep(10)
+          print(last_run.run_number)
+
+          if last_run.conclusion != 'success':
+              os._exit(1)
+        shell: python
+        
+      - name: Test
+        run: echo "NEXT"
         
     
   
