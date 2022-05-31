@@ -1,43 +1,11 @@
-name: Mixed inputs
+name: Fail status
 
 on:
-  workflow_dispatch:
-    inputs:
-      ruby-unicorn-api-unicorn1:
-        type: boolean
-        default: false
-      ruby-all:
-        type: boolean
-        default: false
-      ruby-unicorn-www:
-        type: boolean
-        default: false
-      ruby-unicorn-api:
-        type: boolean
-        default: false
-      ruby-rakes:
-        type: boolean
-        default: false
-      ruby-sidekiq:
-        type: boolean
-        default: false
-      ruby-daemons:
-        type: boolean
-        default: false
-      ruby-prometheus-exporter:
-        type: boolean
-        default: false
-      ruby-unicorn-canary:
-        type: boolean
-        default: false
-      DEVOPS_BRANCH:
-        description: DEVOPS BRANCH
-        default: master
-      
+  workflow_dispatch:      
 
 jobs:
   greet:
     runs-on: ubuntu-latest
     steps:
-    - name: Send greeting
-      run: cat $GITHUB_EVENT_PATH
+    - name: FAIL
+      run: cd exitentdir
