@@ -1,17 +1,20 @@
 name: Env
 
 on:
-  workflow_run:
-    workflows: [Fail status]
-    types:
-      - completed
+  workflow_dispatch:
 
 jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
     - name: Install
-      run: echo "start"
+      run: echo "POCEMON=pikachu" >> $GITHUB_ENV
+      
+    - name: test var
+      run: echo $POCEMON
+      
+    - name: test env
+      run: env
         
     
   
