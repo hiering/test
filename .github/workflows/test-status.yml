@@ -14,7 +14,7 @@ jobs:
       run: echo $POCEMON
       
     - name: env.
-      run: echo ${{ env.TAG }}
+      run: echo ${{ env.POCEMON }}
       
     - name: test env
       run: env
