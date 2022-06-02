@@ -17,7 +17,7 @@ jobs:
       run: echo ${{ env.POCEMON }}
       
     - name: test env
-      run: cat $GITHUB_ENV
+      run: echo $GITHUB_ENV
         
     
   
