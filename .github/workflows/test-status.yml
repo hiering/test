@@ -7,17 +7,9 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-    - name: Install
-      run: echo "POCEMON=pikachu" >> $GITHUB_ENV
-      
-    - name: test var
-      run: echo $POCEMON
-      
-    - name: env.
-      run: echo ${{ env.POCEMON }}
-      
-    - name: test env
-      run: echo $GITHUB_ENV
+    - name: Bash
+      run: |
+        env
         
     
   
