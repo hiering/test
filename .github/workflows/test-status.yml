@@ -7,9 +7,14 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-    - name: Bash
-      run: |
-        env
+      - name: event
+        run: cat $GITHUB_EVENT_PATH
+      - name: Bash
+        run: |
+          for i in `cat $GITHUB_EVENT_PATH`; do
+            echo $i
+          done
+        shell: bash 
         
     
   
