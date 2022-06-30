@@ -9,12 +9,14 @@ jobs:
     steps:
       - name: event
         run: cat $GITHUB_EVENT_PATH
-      - name: Bash
-        run: |
-          for i in `cat $GITHUB_EVENT_PATH`; do
-            echo $i
-          done
-        shell: bash 
+      - name: anotation
+        uses: mholetzko/annotate_runs@v1.0.0
+        with:
+          title: 'Example Annotation Title\n dawdawd'
+          info: 'This is an info'
+          warning: 'This is a warning'
+          
+        
         
     
   
