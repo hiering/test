@@ -12,8 +12,8 @@ jobs:
       - name: anotation
         uses: mholetzko/annotate_runs@v1.0.0
         with:
-          title: 'Example Annotation Title\n dawdawd'
-          info: 'This is an info'
+          title: 'Example Annotation Title'
+          info: 'This is an info \nTest out'
           warning: 'This is a warning'
           
         
