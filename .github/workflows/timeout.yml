@@ -1,0 +1,12 @@
+name: Timeout
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  timeout:
+    runs-on: self-hosted
+    steps:
+      - name: Start test
+        timeout-minutes: 7200
+        run: docker run --name timeout alpine /bin/sh -l -c "sleep infinity"
