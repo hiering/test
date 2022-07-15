@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Re-run failed tests
-        run: echo "Re-run"
+        run: echo "Attempt ${{ github.event.workflow_run.run_attempt }}"
 
           
         
