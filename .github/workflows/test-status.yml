@@ -10,7 +10,7 @@ on:
 jobs:
   re-run:
     if: ${{ github.event.workflow_run.conclusion == 'failure' }}
-    runs-on: [self-hosted, main]
+    runs-on: ubuntu-latest
     steps:
       - name: Re-run failed tests
         run: echo "Re-run"
