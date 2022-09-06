@@ -16,4 +16,4 @@ jobs:
       run: echo "ACTOR=${{ github.actor }}" >> $GITHUB_ENV
     
     - name: User
-      run: echo ${{ github.event.inputs.ACTOR }}
+      run: echo $ACTOR
