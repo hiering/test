@@ -13,7 +13,7 @@ jobs:
     steps:
     - name: If user empty
       if: ${{ github.event.inputs.ACTOR == '' }}
-      run: echo "${{ github.actor }}" >> $GITHUB_ENV
+      run: echo "ACTOR=${{ github.actor }}" >> $GITHUB_ENV
     
     - name: User
       run: echo ${{ github.event.inputs.ACTOR }}
