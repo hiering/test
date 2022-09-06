@@ -5,6 +5,7 @@ on:
     inputs:
      DEPLOY_TYPE:
      ACTOR:
+      description: User
       default: ${{ github.actor }}
 
 jobs:
