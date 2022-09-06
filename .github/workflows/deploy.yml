@@ -6,11 +6,14 @@ on:
      DEPLOY_TYPE:
      ACTOR:
       description: User
-      default: ${{ github.actor }}
 
 jobs:
   greet:
     runs-on: ubuntu-latest
     steps:
+    - name: If user empty
+      if: ${{ github.event.inputs.ACTOR == '' }}
+      run: echo "${{ github.actor }}" >> $GITHUB_ENV
+    
     - name: User
       run: echo ${{ github.event.inputs.ACTOR }}
