@@ -16,6 +16,18 @@ jobs:
         key: runtime
       
     - run: cat tmp/parallel_runtime_rspec.log
+    
+  cache:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/cache@v3
+      with:
+        path: |
+          tmp/parallel_runtime_rspec.log
+        key: runtime
+        
+    - run: cat tmp/parallel_runtime_rspec.log
+
 
     
       
