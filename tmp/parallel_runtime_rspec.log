@@ -1,0 +1,7 @@
+
+Randomized with seed 55072
+spec/graph_ql_api/graph_ql/endpoints/front_end/resolvers/payouts/root_spec.rb:6.855648425
+spec/models/user_payment_requisites/epayments_wallet_spec.rb:0.021243983
+spec/lib/services/vertica/logs_checker_spec.rb:0.042139299
+spec/lib/services/creative/form_manager/by_json_spec.rb:0.112149627
+spec/policies/dcc/ad_unit_policy_spec.rb:0.889483569
