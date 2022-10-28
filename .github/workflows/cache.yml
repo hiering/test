@@ -21,7 +21,7 @@ jobs:
        
       - name: Create file
         run: |
-          mkdir tmp
+          mkdir -p tmp
           echo "master-${{ env.SHORT_SHA }}" > tmp/parallel_runtime_rspec.log
          
       - name: Show file
