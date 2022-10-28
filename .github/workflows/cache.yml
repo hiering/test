@@ -1,0 +1,23 @@
+name: Test cache
+on:
+  workflow_dispatch:
+  push:
+  
+jobs:
+  chache:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cache runtime log
+        uses: actions/cache@v3
+        with:
+          path: |
+            tmp/parallel_runtime_rspec.log
+          key: parallel-runtime-log
+          restore-keys: parallel-runtime-log
+       
+       - name: Create file
+         run: echo "master" > tmp/parallel_runtime_rspec.log
+         
+       - name: Show file
+         run: cat tmp/parallel_runtime_rspec.log
+          
