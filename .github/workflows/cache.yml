@@ -15,9 +15,9 @@ jobs:
           key: parallel-runtime-log
           restore-keys: parallel-runtime-log
        
-       - name: Create file
-         run: echo "master" > tmp/parallel_runtime_rspec.log
+      - name: Create file
+        run: echo "master" > tmp/parallel_runtime_rspec.log
          
-       - name: Show file
-         run: cat tmp/parallel_runtime_rspec.log
+      - name: Show file
+        run: cat tmp/parallel_runtime_rspec.log
           
