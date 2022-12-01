@@ -10,27 +10,23 @@ on:
 jobs:
   job1:
     runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.step1.outputs.test }}
     steps:
       - name: Sleep
-        run: sleep 3m
+        run: sleep 1m
         
   job2:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          echo "Step 1"
-          sleep 2m
-          
-      - name: Wait
-        uses: lewagon/wait-on-check-action@v1.2.0
-        with:
-          check-name: job1
-          wait-interval: 10
-          
-      - name: Countinue
-        run: echo "Countinue"
+      - run: echo ${{ jobs.job1.result }}
+ #         
+ #     - name: Wait
+ #       uses: lewagon/wait-on-check-action@v1.2.0
+ #       with:
+ #         check-name: job1
+ #         wait-interval: 10
+ #         
+ #     - name: Countinue
+ #       run: echo "Countinue"
     
 
 
