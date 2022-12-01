@@ -3,9 +3,9 @@ name: Test
 on:
   workflow_dispatch:
 
-concurrency:
-  group: ${{ github.ref }}
-  #cancel-in-progress: true
+#concurrency:
+#  group: ${{ github.ref }}
+#  cancel-in-progress: true
 
 jobs:
   job1:
@@ -14,7 +14,24 @@ jobs:
       matrix: ${{ steps.step1.outputs.test }}
     steps:
       - name: Sleep
-        run: sleep 5m
+        run: sleep 3m
+        
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Step 1"
+          sleep 2m
+          
+      - name: Wait
+        uses: lewagon/wait-on-check-action@v1.2.0
+        with:
+          check-name: job1
+          wait-interval: 10
+          
+      - name: Countinue
+        run: echo "Countinue"
+    
 
 
     
