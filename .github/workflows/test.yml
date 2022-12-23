@@ -14,7 +14,7 @@ jobs:
       - name: echo
         run: echo "${{ github.run_number }}-${{ github.run_attempt }}" > test
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/download-artifact@v3
         with:
           path: test
         
