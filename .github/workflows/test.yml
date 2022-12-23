@@ -11,13 +11,17 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - name: Sleep
-        run: sleep 1m
+      - name: echo
+        run: echo "${{ github.run_number }}-${{ github.run_attempt }}" > test
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          path: test
         
-  job2:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo ${{ jobs.job1.result }}
+ #  job2:
+ #   runs-on: ubuntu-latest
+ #   steps:
+ #     - run: echo ${{ jobs.job1.result }}
  #         
  #     - name: Wait
  #       uses: lewagon/wait-on-check-action@v1.2.0
