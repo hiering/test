@@ -4,6 +4,7 @@ on:
   workflow_call:
     inputs:
       time:
+        type: string
         default: 1m
 
 jobs:
