@@ -1,0 +1,14 @@
+name: Test call 
+
+on:
+  workflow_dispatch:
+    inputs:
+      time:
+        type: string
+        default: 1m
+        
+jobs:
+  call:
+    uses: ./.github/workflows/re-useble.yml
+    with:
+      time: ${{ inputs.time }}
