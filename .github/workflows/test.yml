@@ -13,6 +13,7 @@ jobs:
     steps:
       - name: Get
         id: latest-release
+        uses: octokit/request-action@v2
         with:
           route: GET /repos/{owner}/{repo}/releases/latest
           
