@@ -1,6 +1,11 @@
 name: Reusable workflow
 
 on:
+  workflow_dispatch:
+    inputs:
+      time:
+        type: string
+        default: 1m
   workflow_call:
     inputs:
       time:
