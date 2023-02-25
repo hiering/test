@@ -3,39 +3,13 @@ name: Test
 on:
   workflow_dispatch:
 
-#concurrency:
-#  group: ${{ github.ref }}
-#  cancel-in-progress: true
-
 jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
       - name: Get
-        id: latest-release
-        uses: octokit/request-action@v2.1.0
-        with:
-          route: GET /repos/{owner}/{repo}/releases/latest
-          
-      - name: Echo
-        run: "echo latest release: '${{ steps.latest-release.outputs.data }}'"
-  
-        
- #  job2:
- #   runs-on: ubuntu-latest
- #   steps:
- #     - run: echo ${{ jobs.job1.result }}
- #         
- #     - name: Wait
- #       uses: lewagon/wait-on-check-action@v1.2.0
- #       with:
- #         check-name: job1
- #         wait-interval: 10
- #         
- #     - name: Countinue
- #       run: echo "Countinue"
-    
-
-
-    
-      
+        run: echo TAG
+  job2:
+    uses: ./.github/workflows/re-useble.yml
+    with:
+      time: 1m
