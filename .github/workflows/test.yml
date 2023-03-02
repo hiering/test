@@ -1,15 +1,13 @@
 name: Test
 
 on:
-  workflow_dispatch:
+  release:
+    types: [published]
 
 jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - name: Get
-        run: echo TAG
-  job2:
-    uses: ./.github/workflows/re-useble.yml
-    with:
-      time: 1m
+      - name: Get event context
+        run: echo ${{ github.event }}
+
