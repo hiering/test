@@ -9,5 +9,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get event context
-        run: cat $GITHUB_EVENT_PATH
+        run: echo ${{ github.event.release.tag_name }}
 
