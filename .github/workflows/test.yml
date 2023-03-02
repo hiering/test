@@ -9,5 +9,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get event context
-        run: env
+        run: cat $GITHUB_EVENT_PATH
 
