@@ -9,5 +9,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get event context
-        run: echo ${{ github.event }}
+        run: env
 
