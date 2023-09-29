@@ -10,5 +10,5 @@ jobs:
       - name: Succesed step
         run: |
           echo "This is test"
-          cd non-existent folder
+          cd non-existent-folder
 
