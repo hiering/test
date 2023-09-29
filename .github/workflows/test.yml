@@ -8,11 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Succesed step
-        run: echo 0
-        
-      - name: Failed step
-        run: bash -c "exit 1"
-        
-      - name: Succesed step
-        run: echo 0
+        run: |
+          echo "This is test"
+          cd non-existent folder
 
