@@ -12,3 +12,6 @@ jobs:
 
       - name: ENV
         run: env
+
+      - name: Show envents data
+        run: cat $GITHUB_EVENT_PATH
