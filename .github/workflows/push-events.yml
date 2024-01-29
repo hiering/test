@@ -1,0 +1,11 @@
+name: Test
+
+on:
+  push:
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Succesed step
+        run: echo "${{ github.event.push }}" | jq -r 
