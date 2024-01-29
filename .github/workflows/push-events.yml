@@ -8,4 +8,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Succesed step
-        run: echo "${{ github.event.push }}" | jq -r 
+        run: echo "${{ toJSON(github.event.push) }}" | jq -r 
