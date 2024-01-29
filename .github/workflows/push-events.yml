@@ -1,0 +1,17 @@
+name: Test
+
+on:
+  push:
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output
+        run: echo "${{ toJSON(github.event.push) }}" | jq -r
+
+      - name: ENV
+        run: env
+
+      - name: Show envents data
+        run: cat $GITHUB_EVENT_PATH
