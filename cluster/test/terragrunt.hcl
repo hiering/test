@@ -14,3 +14,8 @@ remote_state {
     dynamodb_table = "my-lock-table"
   }
 }
+
+# stage/mysql/terragrunt.hcl
+include "root" {
+  path = find_in_parent_folders()
+}
