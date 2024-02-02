@@ -14,7 +14,7 @@ jobs:
         run: env
 
       - name: Get sha
-        run: ${{ github.sha }}
+        run: echo ${{ github.sha }}
 
       - name: Show envents data
         run: cat $GITHUB_EVENT_PATH
