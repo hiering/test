@@ -13,5 +13,8 @@ jobs:
       - name: ENV
         run: env
 
+      - name: Get sha
+        run: ${{ github.sha }}
+
       - name: Show envents data
         run: cat $GITHUB_EVENT_PATH
