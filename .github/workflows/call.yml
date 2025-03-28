@@ -3,12 +3,22 @@ name: Test call
 on:
   workflow_dispatch:
     inputs:
-      time:
+      tag:
+        description: 'Image tag'
         type: string
-        default: 1m
-        
+        required: false
+  workflow_call:
+    inputs:
+      tag:
+        type: string
+        required: true
+
+env:
+  TAG: ${{ inputs.tag || github.ref_name == 'main' && github.sha || github.ref_name }}
+
 jobs:
-  call:
-    uses: ./.github/workflows/re-useble.yml
-    with:
-      time: ${{ inputs.time }}
+  deploy:
+    name: Deploy
+    steps:
+      - name: Tag
+        run: echo $TAG
